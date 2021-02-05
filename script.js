@@ -12,6 +12,4 @@ qs("#calculate").addEventListener("click", () => {
   results.innerHTML += `<li>${res}</li>`;
   results.scrollTop = results.scrollHeight;
 });
-qs("#clear").addEventListener("click", () => {
-  results.innerHTML = "";
-});
+qs("#clear").addEventListener("click", () => (results.innerHTML = ""));
