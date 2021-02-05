@@ -1,5 +1,5 @@
 # Worlds Worst Calculator
 
-## School project
+School assignment
 
 [https://adamgiebl.github.io/wwc/](https://adamgiebl.github.io/wwc/)
