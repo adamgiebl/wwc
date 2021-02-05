@@ -3,21 +3,15 @@ const topInput = qs("#firstnumber");
 const bottomInput = qs("#secondnumber");
 const results = qs("#results");
 const operatorInput = qs("#operator");
-const roundingCheckbox = qs("#doround");
+const doRound = qs("#doround");
 const decimalsSelect = qs("#decimals");
 qs("#calculate").addEventListener("click", () => {
-  const operator = operatorInput.value;
-  let res = eval(topInput.value + operator + bottomInput.value);
-  if (roundingCheckbox.checked) {
-    res = parseFloat(res).toFixed(decimalsSelect.value);
-  }
+  let res = eval(topInput.value + operatorInput.value + bottomInput.value);
+  res = doRound.checked ? parseFloat(res).toFixed(decimalsSelect.value) : res;
   topInput.value = res;
-  const li = document.createElement("li");
-  li.textContent = res;
-  results.appendChild(li);
+  results.innerHTML += `<li>${res}</li>`;
   results.scrollTop = results.scrollHeight;
 });
-
 qs("#clear").addEventListener("click", () => {
   results.innerHTML = "";
 });
